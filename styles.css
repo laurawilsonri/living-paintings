@@ -1,0 +1,62 @@
+body {
+  background: black;
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  margin: 0px;
+}
+
+img {
+  display: block;
+  width: 110%;
+  margin-left: -5%;
+}
+
+.container {
+  margin: 50px auto;
+  margin-top: 150px;
+  width: 50%;
+  overflow: hidden; /* hides scrollbar */
+}
+
+.scene {
+  margin: 0;
+  padding: 0;
+}
+
+.expand-width {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  top: 0px;
+  width: 100%;
+}
+
+.navbar button {
+  background: transparent;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-family: monospace;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  color: #61e6d9;
+  transition: 0.3s;
+}
+
+.navbar .selected {
+  color: #0f97ff;
+  transition: 0.3s;
+}
+
+.title {
+  padding: 6px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+
+  <title> 🖼️ Living Paintings</title>
+
+  <!-- Behavioral Meta Data -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <span class="title">Living Paintings</span>
+        <button class="nav-btn selected">Starry Night</button>
+        <button class="nav-btn">Painting 2</button>
+        <button class="nav-btn">Painting 3</button>
+        <button class="nav-btn"> About</button>
+    </div>
+
+  <div id="container" class="container">
+    <div id="scene" data-relative-input="false" class="scene" data-pointer-events="true" data-origin-y="1">
+      <div class="expand-width" data-depth="0.00"><img src="img/starry/l5.png"/></div>
+      <div class="expand-width" data-depth="0.10"><img src="img/starry/l4.5.png"/></div>
+      <div class="expand-width" data-depth="0.30"><img src="img/starry/l4.png"/></div>
+      <div class="expand-width" data-depth="0.50"><img src="img/starry/l3.png"/></div>
+      <div class="expand-width" data-depth="0.70"><img src="img/starry/l2.png"/></div>
+      <div class="expand-width" data-depth="1.00"><img src="img/starry/l1.png"/></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!--<script src="./parallax.js"></script>-->
+  <script>
+
+  var scene = document.getElementById('scene');
+  var parallax = new Parallax(scene);
+
+  // set up nav bar interaction
+  let myBtns = document.querySelectorAll('.nav-btn');
+  myBtns.forEach( btn => {
+    btn.addEventListener('click', (e)=> {
+      myBtns.forEach(b => {b.className = b.className.replace(' selected', '')});
+      e.target.className += ' selected';
+  })
+  });
+  
+ 
+  </script>
+
+</body>
+</html>
