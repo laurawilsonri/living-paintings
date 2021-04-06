@@ -4,6 +4,7 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   margin: 0px;
+  text-align: center;
 }
 
 img {
@@ -96,6 +97,34 @@ button:hover {
 
 #guernica .container {
   width: 70%;
+}
+
+#about {
+  margin-top: 100px;
+}
+
+.about-info {
+  font-family: "Lato", sans-serif;
+  width: 40%;
+  min-width: 300px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.about-info h3 {
+  color: #0f97ff;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+.about-info li {
+  text-align: left;
+}
+
+a {
+  color: #61e6d9;
 }
 
 

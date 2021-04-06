@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400i;">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400i;">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,200,200i,300,300i,400,400i;500,600,600i,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i;">
   <link rel="stylesheet" type="text/css" href="styles.css"/>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
@@ -81,6 +81,39 @@
         <h6 class="artist">Pablo Picasso, 1937</h6>
       </div>
     </div>
+
+
+    <div id="about" class="pt-page">
+      <div class="about-info">
+        <h2 class="painting-title">About</h2>
+        <h3>The Vision</h3>
+        <div>
+          Living Paintings is a virtual installation that transforms static paintings into 
+          interactive experiences by leveraging parallax movement. 
+        </div>
+        <h3>The Context</h3>
+        <div>
+          This site was created by Laura Wilson as the final project for <em>CLPS0540 Spring21 Simulating 
+          Reality: The (Curious) History and Science of Immersive Experiences</em>, a Brown University
+          course for Spring 2021. 
+        </div>
+        <h3>The Goals</h3>
+        <ul>
+          <li>Offer a new mode of experiencing paintings in a growing virtual world</li>
+          <li>Make paintings more accessible and immersive using interaction and parallax movement</li>
+          <li>Show that the web can be an effective home for art installations</li>
+        </ul>
+        <h3>The Process</h3>
+        <div>
+          I carefully disected each painting into layers using Adobe Photoshop, filling any holes with 
+          Photoshop's Content Aware Fill Tool. Then, I built a webpage to host the paintings, and utilized 
+          <a href="http://matthew.wagerfield.com/parallax/">the parallax.min.js</a> to add the 
+          parallax scrolling interaction.  
+          <br>You can check out my code in this
+          <a href="https://github.com/laurawilsonri/living-paintings">GitHub repo</a>! 
+        </div>
+      </div>
+    </div>
   
 
 
@@ -107,8 +140,10 @@
       pages.forEach(p => {p.className = (p.id == paintingName) ? 'pt-page active' : 'pt-page'})
 
       // set up scene
-      scene = document.getElementById(paintingName + '-scene');
-      parallax = new Parallax(scene);
+      if (paintingName != 'about') {
+        scene = document.getElementById(paintingName + '-scene');
+        parallax = new Parallax(scene);
+      }
   })
   });
   
