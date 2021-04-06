@@ -1,5 +1,5 @@
 body {
-  background: #0e0e0e;
+  background: black; /*#0e0e0e;*/
   color: white;
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -39,8 +39,9 @@ img {
 
 .navbar button {
   background: transparent;
-  color: #cccccc;
+  color: #bbbbbb;
   font-family: "Lato", sans-serif;
+  font-style: italic;
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -94,7 +95,7 @@ button:hover {
 }
 
 #guernica .container {
-  width: 80%;
+  width: 70%;
 }
 
 
