@@ -1,7 +1,7 @@
 body {
   background: black;
   color: white;
-  font-family: monospace;
+  font-family: "Lato", sans-serif;
   font-size: 18px;
   margin: 0px;
 }
@@ -13,8 +13,8 @@ img {
 }
 
 .container {
-  margin: 50px auto;
-  margin-top: 150px;
+  margin: 30px auto;
+  margin-top: 90px;
   width: 50%;
   overflow: hidden; /* hides scrollbar */
 }
@@ -39,10 +39,10 @@ img {
 
 .navbar button {
   background: transparent;
-  color: white;
+  color: #e8e8e8;
+  font-family: "Lato", sans-serif;
   padding: 10px;
   border: none;
-  font-family: monospace;
   cursor: pointer;
   outline: none;
 }
@@ -59,4 +59,42 @@ button:hover {
 
 .title {
   padding: 6px;
+  font-weight: 400;
+  font-style: italic;
 }
+
+.label {
+  font-weight: 300;
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+}
+
+.artist {
+  color: #9e9e9e;
+  margin: 0px auto;
+}
+
+.painting-title {
+  font-family: "Lora", cursive;
+  font-style: italic;
+  margin: 5px auto;
+}
+
+.pt-page {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+#wanderer .container {
+  width: 30%;
+}
+
+#guernica .container {
+  width: 80%;
+}
+
+
