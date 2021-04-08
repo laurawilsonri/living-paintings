@@ -18,6 +18,7 @@ img {
   margin-top: 90px;
   width: 50%;
   overflow: hidden; /* hides scrollbar */
+  position: relative;
 }
 
 .scene {
@@ -38,7 +39,7 @@ img {
   width: 100%;
 }
 
-.navbar button {
+button {
   background: transparent;
   color: #bbbbbb;
   font-family: "Lato", sans-serif;
@@ -127,4 +128,37 @@ a {
   color: #61e6d9;
 }
 
+.full-screen {
+  margin: auto;
+  max-height: 100vh;
+  width: auto !important;
+}
+
+/* defined by the aspect ratios of the paintings */
+#starry .full-screen {
+  max-width: 133vh;
+}
+
+#guernica .full-screen {
+  max-width: 200vh;
+}
+
+#wanderer .full-screen {
+  max-width: 72vh;
+}
+
+.full-screen-btn {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-style: normal;
+  font-size: small;
+  margin-left: 5px;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+}
 
