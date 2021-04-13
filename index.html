@@ -34,8 +34,8 @@
           <div class="expand-width" data-depth="0.00"><img src="img/starry/l5.png"/></div>
           <div class="expand-width" data-depth="0.10"><img src="img/starry/l4.5.png"/></div>
           <div class="expand-width" data-depth="0.30"><img src="img/starry/l4.png"/></div>
-          <div class="expand-width" data-depth="0.50"><img src="img/starry/l3.png"/></div>
-          <div class="expand-width" data-depth="0.70"><img src="img/starry/l2.png"/></div>
+          <div class="expand-width" data-depth="0.45"><img src="img/starry/l3.png"/></div>
+          <div class="expand-width" data-depth="0.60"><img src="img/starry/l2.png"/></div>
           <div class="expand-width" data-depth="1.00"><img src="img/starry/l1.png"/></div>
         </div>
         <button class="full-screen-btn" data-pt="starry">[⤢]</button>
@@ -54,7 +54,7 @@
           <div class="expand-width" data-depth="0.00"><img src="img/wanderer/l5.png"/></div>
           <div class="expand-width" data-depth="0.10"><img src="img/wanderer/l4.png"/></div>
           <div class="expand-width" data-depth="0.30"><img src="img/wanderer/l3.png"/></div>
-          <div class="expand-width" data-depth="0.50"><img src="img/wanderer/l2.png"/></div>
+          <div class="expand-width" data-depth="0.60"><img src="img/wanderer/l2.png"/></div>
           <div class="expand-width" data-depth="1.00"><img src="img/wanderer/l1.png"/></div>
         </div>
         <button class="full-screen-btn" data-pt="wanderer">[⤢]</button>
@@ -157,13 +157,15 @@
   let fsBtns = document.querySelectorAll('.full-screen-btn');
   fsBtns.forEach( fsBtn => {
     fsBtn.addEventListener('click', (e)=> {
+      navBar = document.querySelector('.navbar');
       painting = e.target.getAttribute('data-pt');
-      container = document.getElementById(painting).querySelector('.container')
+      container = document.getElementById(painting).querySelector('.container');
       if(!container.className.includes("full-screen")) {
-        container.className = container.className + ' full-screen'
-        // TODO: show text that says ESC to exit
+        container.className = container.className + ' full-screen';
+        navBar.style.visibility = 'hidden';
       } else {
         container.className = container.className.replace(' full-screen', '');
+        navBar.style.visibility = 'unset';
       }
   })
   });
@@ -180,6 +182,7 @@
     if (e) {
         fullScreenItem = document.querySelector('.full-screen');
         fullScreenItem.className = fullScreenItem.className.replace(' full-screen', '');
+        navBar.style.visibility = 'unset';
     }
 };
   
