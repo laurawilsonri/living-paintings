@@ -214,11 +214,11 @@
       painting = e.target.getAttribute('data-pt');
       container = document.getElementById(painting).querySelector('.container');
       if(!container.className.includes("full-screen")) {
-        container.className = container.className + ' full-screen';
         navBar.style.visibility = 'hidden';
+        container.className = container.className + ' full-screen';
       } else {
+        navBar.style.visibility = 'visible';
         container.className = container.className.replace(' full-screen', '');
-        navBar.style.visibility = 'unset';
       }
   })
   });
@@ -249,9 +249,9 @@
       esc = (e.keyCode === 27);
     }
     if (e) {
+        navBar.style.visibility = 'visible';
         fullScreenItem = document.querySelector('.full-screen');
         fullScreenItem.className = fullScreenItem.className.replace(' full-screen', '');
-        navBar.style.visibility = 'unset';
     }
   };
 
