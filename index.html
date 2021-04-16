@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
 
-  <title> 🖼️ Living Paintings</title>
+  <title>🖼️ Living Paintings</title>
 
   <!-- Behavioral Meta Data -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,14 +21,51 @@
 <body>
 
     <div class="navbar">
-        <span class="title">Living Paintings</span>
-        <button id="starry-btn" class="nav-btn selected">Starry Night</button>
-        <button id="wanderer-btn" class="nav-btn">Wanderer above the Sea of Fog</button>
+        <button id="title">Living Paintings</button>
+        <button id="starry-btn" class="nav-btn">Starry Night</button>
+        <button id="sunday-btn" class="nav-btn">A Sunday Afternoon</button>
+        <button id="wanderer-btn" class="nav-btn">Wanderer</button>
         <button id="guernica-btn" class="nav-btn">Guernica</button>
         <button id="about-btn" class="nav-btn">About</button>
     </div>
 
-    <div id="starry" class="pt-page active">
+    <div id="home">
+        <h2 class="painting-title">Welcome to Living Paintings!</h2>
+        <h4 class="subtitle">A virtual installation that transforms static paintings into interactive experiences.</h4>
+        <h5>To begin, select which painting you'd like to experience.</h5>
+        <div class="thumbnail-display">
+          <div class="t-wrap">
+            <img class="thumbnail" src="img/starry/full.jpg" data-pt="starry"/>
+            <div class="thumbnail-label">
+              <h4 class="painting-title">Starry Night</h4>
+              <h6 class="artist">Vincent van Gogh</h6>
+            </div>
+          </div>
+          <div class="t-wrap">
+            <img class="thumbnail" src="img/sunday/full.jpg" data-pt="sunday"/>
+            <div class="thumbnail-label">
+              <h4 class="painting-title">A Sunday Afternoon</h4>
+              <h6 class="artist">Georges Seurat</h6>
+            </div>
+          </div>
+          <div class="t-wrap" >
+            <img class="thumbnail" src="img/wanderer/full.jpeg" data-pt="wanderer"/>
+            <div class="thumbnail-label">
+              <h4 class="painting-title">Wanderer</h4>
+              <h6 class="artist">Caspar David Friedrich</h6>
+            </div>
+          </div>
+          <div class="t-wrap" >
+            <img class="thumbnail" src="img/guernica/full.jpeg" data-pt="guernica"/>
+            <div class="thumbnail-label">
+              <h4 class="painting-title">Guernica</h4>
+              <h6 class="artist">Pablo Picasso</h6>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="starry" class="pt-page">
       <div class="container">
         <div id="starry-scene" data-relative-input="false" class="scene" data-pointer-events="true" data-origin-y="1">
           <div class="expand-width" data-depth="0.00"><img src="img/starry/l5.png"/></div>
@@ -47,15 +84,34 @@
       </div>
     </div>
 
+    <div id="sunday" class="pt-page">
+      <div class="container">
+        <div id="sunday-scene" data-relative-input="false" class="scene" data-pointer-events="true" data-origin-y="1">
+          <div class="expand-width" data-depth="0.00"><img src="img/sunday/l6.png" /></div>
+          <div class="expand-width" data-depth="0.05"><img src="img/sunday/l5.png" style="margin-top:-.5vw;"/></div>
+          <div class="expand-width" data-depth="0.10"><img src="img/sunday/l4.png" style="margin-top:-1vw;"/></div>
+          <div class="expand-width" data-depth="0.40"><img src="img/sunday/l3.png"/></div>
+          <div class="expand-width" data-depth="0.80"><img src="img/sunday/l2.png"/></div>
+          <div class="expand-width" data-depth="1.00"><img src="img/sunday/l1.png"/></div>
+        </div>
+        <button class="full-screen-btn" data-pt="sunday">[⤢]</button>
+      </div> 
+
+      <div class="label">
+        <h4 class="painting-title">A Sunday Afternoon on the Island of La Grande Jatte</h4>
+        <h6 class="artist">Georges Seurat, 1884</h6>
+      </div>
+    </div>
+
 
     <div id="wanderer" class="pt-page">
       <div class="container">
         <div id="wanderer-scene" data-relative-input="false" class="scene" data-pointer-events="true" data-origin-y="1">
           <div class="expand-width" data-depth="0.00"><img src="img/wanderer/l5.png"/></div>
-          <div class="expand-width" data-depth="0.10"><img src="img/wanderer/l4.png"/></div>
-          <div class="expand-width" data-depth="0.30"><img src="img/wanderer/l3.png"/></div>
-          <div class="expand-width" data-depth="0.60"><img src="img/wanderer/l2.png"/></div>
-          <div class="expand-width" data-depth="1.00"><img src="img/wanderer/l1.png"/></div>
+          <div class="expand-width" data-depth="0.15"><img src="img/wanderer/l4.png"/></div>
+          <div class="expand-width" data-depth="0.50"><img src="img/wanderer/l3.png"/></div>
+          <div class="expand-width" data-depth="1.00"><img src="img/wanderer/l2.png"/></div>
+          <div class="expand-width" data-depth="0.00"><img src="img/wanderer/l1.png"/></div>
         </div>
         <button class="full-screen-btn" data-pt="wanderer">[⤢]</button>
       </div> 
@@ -86,10 +142,9 @@
       </div>
     </div>
 
-
     <div id="about" class="pt-page">
       <div class="about-info">
-        <h2 class="painting-title">About</h2>
+        <h2 class="painting-title">~ About ~</h2>
         <h3>The Vision</h3>
         <div>
           <b>Living Paintings is a virtual installation that transforms static paintings into 
@@ -123,37 +178,32 @@
   
 
 
-
   <!-- Scripts -->
   <!--<script src="./parallax.js"></script>-->
   <script>
 
-  // default scene is starry
-  var scene = document.getElementById('starry-scene');
-  var parallax = new Parallax(scene);
-
-  // set up nav bar interaction
+  // Nav bar interaction
   let btns = document.querySelectorAll('.nav-btn');
+  let btnMap = {}
+  btns.forEach(b => btnMap[b.id.split('-')[0]] = b)
   let pages = document.querySelectorAll('.pt-page');
+  let homePage = document.getElementById('home');
 
   btns.forEach( btn => {
     btn.addEventListener('click', (e)=> {
-      btns.forEach(b => {b.className = b.className.replace(' selected', '')});
-      e.target.className += ' selected';
-
-      // show corresponding painting
       const paintingName = e.target.id.split('-')[0]
-      pages.forEach(p => {p.className = (p.id == paintingName) ? 'pt-page active' : 'pt-page'})
-
-      // set up scene
-      if (paintingName != 'about') {
-        scene = document.getElementById(paintingName + '-scene');
-        parallax = new Parallax(scene);
-      }
+      goToPaintingPage(paintingName);
   })
   });
 
-  // set up full screen interaction
+  document.getElementById('title').addEventListener('click', (e)=> {
+      btns.forEach(b => {b.className = b.className.replace(' selected', '')});
+      pages.forEach(p => {p.className = 'pt-page'});
+      homePage.style.display = 'block';
+  })
+
+
+  // Full screen interaction
   let fsBtns = document.querySelectorAll('.full-screen-btn');
   fsBtns.forEach( fsBtn => {
     fsBtn.addEventListener('click', (e)=> {
@@ -170,6 +220,22 @@
   })
   });
 
+  // Navigates to the specified painting page
+  function goToPaintingPage(ptName) {
+    homePage.style.display = 'none';
+    btns.forEach(b => {b.className = b.className.replace(' selected', '')});
+    btnMap[ptName].className += ' selected';
+
+    // show corresponding painting
+    pages.forEach(p => {p.className = (p.id == ptName) ? 'pt-page active' : 'pt-page'})
+
+    // set up scene
+    if (ptName != 'about') {
+      scene = document.getElementById(ptName + '-scene');
+      parallax = new Parallax(scene);
+    }
+  }
+
   // ESC to exit full screen
   document.onkeydown = function(e) {
     e = e || window.event;
@@ -184,7 +250,16 @@
         fullScreenItem.className = fullScreenItem.className.replace(' full-screen', '');
         navBar.style.visibility = 'unset';
     }
-};
+  };
+
+    // Home screen click thumbnail interaction
+    let thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(t => {
+      t.addEventListener('click', (e)=> {
+        painting = e.target.getAttribute('data-pt');
+        goToPaintingPage(painting);
+      })
+    })
   
  
   </script>
