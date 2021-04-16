@@ -15,7 +15,7 @@ body {
 
 .container {
   margin: 30px auto;
-  margin-top: 90px;
+  margin-top: 16vh;
   width: 40%;
   overflow: hidden; /* hides scrollbar */
   position: relative;
