@@ -124,6 +124,14 @@ button:hover {
   margin-bottom: 100px;
 }
 
+#wanderer-fog-layer {
+  opacity: 0.75;
+  width: 115%;
+  margin-left: -7%;
+  margin-top: -4%;
+}
+
+
 .about-info {
   font-family: "Lato", sans-serif;
   width: 45%;
